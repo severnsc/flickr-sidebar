@@ -1,0 +1,12 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<h2>Flickr App</h2>
+		<%= form_tag('/', method: :get) do %>
+			<%= text_field_tag 'user_id' %>
+			<%= submit_tag 'Submit' %>
+		<% end %>
+		<% unless @user_id.nil? %>
+			<%= render_feed(@user_id) %>
+		<% end %>
+	</div>
+</div>
